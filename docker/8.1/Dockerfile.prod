@@ -18,7 +18,7 @@ ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/do
 RUN chmod +x /usr/local/bin/install-php-extensions
 
 RUN apt-get update \
-    && apt-get install -y gnupg gosu vim curl ca-certificates zip unzip git supervisor libcap2-bin libpng-dev python2 wget libpq-dev \
+    && apt-get install -y gnupg gosu vim curl ca-certificates zip unzip git supervisor libcap2-bin libpng-dev python3 wget libpq-dev \
     && install-php-extensions pdo pdo_pgsql pgsql gd curl imap mbstring xml zip bcmath intl readline ldap msgpack igbinary redis swoole memcached pcov \
     && php -r "readfile('https://getcomposer.org/installer');" | php -- --install-dir=/usr/bin/ --filename=composer \
     && curl -sLS https://deb.nodesource.com/setup_$NODE_VERSION.x | bash - \
